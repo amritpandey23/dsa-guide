@@ -43,17 +43,16 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <a name="_top"></a>
 <h1 id="detect-cycle-in-directed-graph">Detect Cycle in Directed Graph</h1>
 <p>Given a <strong>directed graph</strong> represented as an adjacency list, the task is to determine if the graph contains any cycles.</p>
-<div class="mermaid">graph TD
+<div class="mermaid">graph LR
     1 --&gt; 2
     2 --&gt; 3
     3 --&gt; 4
     4 --&gt; 2
 </div>
-<hr/>
 <h2 id="depth-first-search-dfs-approach">Depth-First Search (DFS) Approach</h2>
 <p>In an <strong>undirected graph</strong>, we use a <code>visited[]</code> array to track visited nodes and detect if a node is revisited, indicating a cycle. However, this approach does not work for directed graphs because nodes can be visited multiple times from different paths. </p>
 <p>For example, consider the following graph:</p>
-<div class="mermaid">graph TD
+<div class="mermaid">graph LR
     1 --&gt; 2
     3 --&gt; 2
 </div>
@@ -66,7 +65,6 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
         return true;
 </code></pre>
 <p>While this approach works, it is inefficient as it repeatedly initializes the <code>visited[]</code> array and performs redundant checks.</p>
-<hr/>
 <h3 id="optimized-dfs-algorithm">Optimized DFS Algorithm</h3>
 <p>We can optimize the approach by:
 1. Initializing the <code>visited[]</code> array once.
@@ -100,17 +98,15 @@ def detectCycleUtil(node, graph, visited, processed):
 <li><strong><code>visited[]</code></strong>: Tracks nodes visited in the current DFS traversal.</li>
 <li><strong><code>processed[]</code></strong>: Tracks sub-graphs already checked for cycles.</li>
 </ul>
-<hr/>
 <h2 id="breadth-first-search-bfs-approach">Breadth-First Search (BFS) Approach</h2>
 <p>To understand the BFS-based approach, it’s essential to first understand <strong>topological sorting</strong> for directed graphs. Consider the graph below:</p>
-<div class="mermaid">graph TD
+<div class="mermaid">graph LR
     1 --&gt; 2
     2 --&gt; 3
     3 --&gt; 4
     1 --&gt; 4
 </div>
 <p>This graph can be viewed as a dependency graph, where processing node <code>1</code> requires processing nodes <code>2</code>, <code>3</code>, and <code>4</code> first. The topological order of the graph reflects this dependency.</p>
-<hr/>
 <h3 id="topological-sorting-algorithm">Topological Sorting Algorithm</h3>
 <p>Topological sorting processes nodes in decreasing order of their <strong>in-degrees</strong>. Below is the algorithm to print the topological order of a directed graph:</p>
 <pre><code class="language-py">def topological_sort(graph):
@@ -134,7 +130,6 @@ def detectCycleUtil(node, graph, visited, processed):
             if indegrees[nbr] == 0:
                 queue.append(n)
 </code></pre>
-<hr/>
 <h3 id="khans-algorithm-for-cycle-detection">Khan's Algorithm for Cycle Detection</h3>
 <p>Khan's algorithm is a modification of the topological sorting algorithm. By counting the nodes added to the queue, we can determine if the graph contains a cycle. If the count of processed nodes equals the total number of nodes in the graph, it implies the absence of cycles.</p>
 <pre><code class="language-py">def detect_cycle(graph):
@@ -167,6 +162,11 @@ def detectCycleUtil(node, graph, visited, processed):
 <li><strong>If <code>count == len(graph)</code></strong>: No cycle exists.</li>
 <li><strong>If <code>count != len(graph)</code></strong>: A cycle is present.</li>
 </ul>
+<h4 id="related-problems">Related Problems 📕</h4>
+<ol>
+<li><a href="https://leetcode.com/problems/course-schedule/description/">Leetcode - 207. Course Schedule</a></li>
+<li><a href="https://leetcode.com/problems/build-a-matrix-with-conditions/description/">Leetcode - 2392. Build a Matrix With Conditions</a></li>
+</ol>
 <br/>
 <br/>
 </div>

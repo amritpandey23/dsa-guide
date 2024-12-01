@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../../img/favicon.ico" rel="shortcut icon"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<title>Detect Cycle in Directed Graph - Data Structures and Algorithms Guide</title>
+<link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet"/>
+<link href="../../css/font-awesome-4.7.0.css" rel="stylesheet"/>
+<link href="../../css/base.css" rel="stylesheet"/>
+<link href="../../css/highlight.css" rel="stylesheet"/>
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+<script src="../../js/jquery-3.2.1.min.js"></script>
+<script src="../../js/bootstrap-3.3.7.min.js"></script>
+<script src="../../js/highlight.pack.js"></script>
+<base target="_top"/>
+<script>
+      var base_url = '../..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Detect Cycle in Directed Graph", url: "#_top", children: [
+              {title: "Depth-First Search (DFS) Approach", url: "#depth-first-search-dfs-approach" },
+              {title: "Breadth-First Search (BFS) Approach", url: "#breadth-first-search-bfs-approach" },
+          ]},
+        ];
+
+    </script>
+<script src="../../js/base.js"></script>
+</meta></head>
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+<div class="container-fluid wm-page-content">
+<a name="_top"></a>
+<h1 id="detect-cycle-in-directed-graph">Detect Cycle in Directed Graph</h1>
+<p>Given a <strong>directed graph</strong> represented as an adjacency list, the task is to determine if the graph contains any cycles.</p>
+<div class="mermaid">graph TD
+    1 --&gt; 2
+    2 --&gt; 3
+    3 --&gt; 4
+    4 --&gt; 2
+</div>
+<hr/>
+<h2 id="depth-first-search-dfs-approach">Depth-First Search (DFS) Approach</h2>
+<p>In an <strong>undirected graph</strong>, we use a <code>visited[]</code> array to track visited nodes and detect if a node is revisited, indicating a cycle. However, this approach does not work for directed graphs because nodes can be visited multiple times from different paths. </p>
+<p>For example, consider the following graph:</p>
+<div class="mermaid">graph TD
+    1 --&gt; 2
+    3 --&gt; 2
+</div>
+<p>Here, node <strong>2</strong> can be visited twice, but that does not imply the presence of a cycle.</p>
+<h3 id="observing-sub-graphs">Observing Sub-Graphs</h3>
+<p>A directed graph can be seen as a collection of sub-graphs. In the graph above, there are two sub-graphs: <code>1 → 2</code> and <code>3 → 2</code>. Running a cycle detection algorithm independently on each sub-graph will detect cycles. For instance:</p>
+<pre><code class="language-py">for (each node in graph):
+    new visited[];
+    if (detectCycle(node, visited, graph)):
+        return true;
+</code></pre>
+<p>While this approach works, it is inefficient as it repeatedly initializes the <code>visited[]</code> array and performs redundant checks.</p>
+<hr/>
+<h3 id="optimized-dfs-algorithm">Optimized DFS Algorithm</h3>
+<p>We can optimize the approach by:
+1. Initializing the <code>visited[]</code> array once.
+2. Introducing a <code>processed[]</code> array to track sub-graphs already checked for cycles.</p>
+<p>Here’s the code:</p>
+<pre><code class="language-py">def detectCycle(graph):
+    visited = [False] * len(graph)
+    processed = [False] * len(graph)
+
+    for node in range(len(graph)):
+        if not processed[node]:
+            if detectCycleUtil(node, graph, visited, processed):
+                return True
+
+    return False
+
+def detectCycleUtil(node, graph, visited, processed):
+    visited[node] = True
+    processed[node] = True
+
+    for nbr in graph[node]:
+        if visited[nbr]:  # Cycle detected
+            return True
+        elif detectCycleUtil(nbr, graph, visited, processed):
+            return True
+
+    visited[node] = False
+    return False
+</code></pre>
+<ul>
+<li><strong><code>visited[]</code></strong>: Tracks nodes visited in the current DFS traversal.</li>
+<li><strong><code>processed[]</code></strong>: Tracks sub-graphs already checked for cycles.</li>
+</ul>
+<hr/>
+<h2 id="breadth-first-search-bfs-approach">Breadth-First Search (BFS) Approach</h2>
+<p>To understand the BFS-based approach, it’s essential to first understand <strong>topological sorting</strong> for directed graphs. Consider the graph below:</p>
+<div class="mermaid">graph TD
+    1 --&gt; 2
+    2 --&gt; 3
+    3 --&gt; 4
+    1 --&gt; 4
+</div>
+<p>This graph can be viewed as a dependency graph, where processing node <code>1</code> requires processing nodes <code>2</code>, <code>3</code>, and <code>4</code> first. The topological order of the graph reflects this dependency.</p>
+<hr/>
+<h3 id="topological-sorting-algorithm">Topological Sorting Algorithm</h3>
+<p>Topological sorting processes nodes in decreasing order of their <strong>in-degrees</strong>. Below is the algorithm to print the topological order of a directed graph:</p>
+<pre><code class="language-py">def topological_sort(graph):
+    indegrees = [0] * len(graph)
+
+    # Compute in-degrees of all nodes
+    for node in range(len(graph)):
+        for nbr in graph[node]:
+            indegrees[nbr] += 1
+
+    queue = []
+    for node in range(len(graph)):
+        if indegrees[node] == 0:  # Add nodes with 0 in-degree
+            queue.append(node)
+
+    while queue:
+        n = queue.pop(0)
+        print(n)  # Process node
+        for nbr in graph[n]:
+            indegrees[nbr] -= 1  # Decrement in-degree
+            if indegrees[nbr] == 0:
+                queue.append(n)
+</code></pre>
+<hr/>
+<h3 id="khans-algorithm-for-cycle-detection">Khan's Algorithm for Cycle Detection</h3>
+<p>Khan's algorithm is a modification of the topological sorting algorithm. By counting the nodes added to the queue, we can determine if the graph contains a cycle. If the count of processed nodes equals the total number of nodes in the graph, it implies the absence of cycles.</p>
+<pre><code class="language-py">def detect_cycle(graph):
+    indegrees = [0] * len(graph)
+
+    # Compute in-degrees of all nodes
+    for node in range(len(graph)):
+        for nbr in graph[node]:
+            indegrees[nbr] += 1
+
+    queue = []
+    count = 0
+
+    for node in range(len(graph)):
+        if indegrees[node] == 0:
+            queue.append(node)
+            count += 1
+
+    while queue:
+        n = queue.pop(0)
+        for nbr in graph[n]:
+            indegrees[nbr] -= 1
+            if indegrees[nbr] == 0:
+                queue.append(nbr)
+                count += 1
+
+    return count != len(graph)
+</code></pre>
+<ul>
+<li><strong>If <code>count == len(graph)</code></strong>: No cycle exists.</li>
+<li><strong>If <code>count != len(graph)</code></strong>: A cycle is present.</li>
+</ul>
+<br/>
+<br/>
+</div>
+<footer class="container-fluid wm-page-content">
+<p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
+</html>

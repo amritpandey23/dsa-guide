@@ -3,14 +3,12 @@
 Given a **directed graph** represented as an adjacency list, the task is to determine if the graph contains any cycles.
 
 ```mermaid
-graph TD
+graph LR
     1 --> 2
     2 --> 3
     3 --> 4
     4 --> 2
 ```
-
----
 
 ## Depth-First Search (DFS) Approach
 
@@ -19,7 +17,7 @@ In an **undirected graph**, we use a `visited[]` array to track visited nodes an
 For example, consider the following graph:
 
 ```mermaid
-graph TD
+graph LR
     1 --> 2
     3 --> 2
 ```
@@ -38,8 +36,6 @@ for (each node in graph):
 ```
 
 While this approach works, it is inefficient as it repeatedly initializes the `visited[]` array and performs redundant checks.
-
----
 
 ### Optimized DFS Algorithm
 
@@ -78,14 +74,12 @@ def detectCycleUtil(node, graph, visited, processed):
 - **`visited[]`**: Tracks nodes visited in the current DFS traversal.
 - **`processed[]`**: Tracks sub-graphs already checked for cycles.
 
----
-
 ## Breadth-First Search (BFS) Approach
 
 To understand the BFS-based approach, it’s essential to first understand **topological sorting** for directed graphs. Consider the graph below:
 
 ```mermaid
-graph TD
+graph LR
     1 --> 2
     2 --> 3
     3 --> 4
@@ -93,8 +87,6 @@ graph TD
 ```
 
 This graph can be viewed as a dependency graph, where processing node `1` requires processing nodes `2`, `3`, and `4` first. The topological order of the graph reflects this dependency.
-
----
 
 ### Topological Sorting Algorithm
 
@@ -122,8 +114,6 @@ def topological_sort(graph):
             if indegrees[nbr] == 0:
                 queue.append(n)
 ```
-
----
 
 ### Khan's Algorithm for Cycle Detection
 
@@ -159,3 +149,8 @@ def detect_cycle(graph):
 
 - **If `count == len(graph)`**: No cycle exists.
 - **If `count != len(graph)`**: A cycle is present.
+
+#### Related Problems 📕
+
+1. [Leetcode - 207. Course Schedule](https://leetcode.com/problems/course-schedule/description/)
+2. [Leetcode - 2392. Build a Matrix With Conditions](https://leetcode.com/problems/build-a-matrix-with-conditions/description/)

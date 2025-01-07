@@ -1,10 +1,12 @@
-site_name: Data Structures and Algorithms Guide 
+site_name: Data Structures and Algorithms Guide
 theme:
   name: windmill
 nav:
   - Home: index.html
   - Graph:
-    - Detect Cycle in Directed Graph: graph/detect_cycle_in_directed_graph.md
+      - Detect Cycle in Directed Graph: graph/detect_cycle_in_directed_graph.md
+  - Heap:
+      - Priority Queue: heap/priority_queue.md
 plugins:
   - search
   - mermaid2

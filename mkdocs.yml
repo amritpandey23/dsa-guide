@@ -7,6 +7,8 @@ nav:
       - Detect Cycle in Directed Graph: graph/detect_cycle_in_directed_graph.md
   - Heap:
       - Priority Queue: heap/priority_queue.md
+  - Backtracking:
+      - Backtracking: backtracking/backtracking.md
 plugins:
   - search
   - mermaid2

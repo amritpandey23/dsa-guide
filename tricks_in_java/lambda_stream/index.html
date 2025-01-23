@@ -83,7 +83,7 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 
         // collect all pairs having x &gt;= 1
         List&lt;Pair&gt; newList = oldList.stream().
-            .collect(p -&gt; p.x &gt;= 1, Collectors.toList());
+            .collect(Collectors.filtering(p -&gt; p.x &gt;= 1, Collectors.toList()));
     }
 
     static class Pair {

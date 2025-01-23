@@ -13,7 +13,7 @@ public class Trick1 {
 
         // collect all pairs having x >= 1
         List<Pair> newList = oldList.stream().
-            .collect(p -> p.x >= 1, Collectors.toList());
+            .collect(Collectors.filtering(p -> p.x >= 1, Collectors.toList()));
     }
 
     static class Pair {

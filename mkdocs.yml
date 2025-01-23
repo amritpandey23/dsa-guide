@@ -2,13 +2,16 @@ site_name: Data Structures and Algorithms Guide
 theme:
   name: windmill
 nav:
-  - Home: index.html
+  - Disjoint Set:
+    - Union-Find Algorithm: disjoint_set/union_find.md
   - Graph:
       - Detect Cycle in Directed Graph: graph/detect_cycle_in_directed_graph.md
   - Heap:
       - Priority Queue: heap/priority_queue.md
   - Backtracking:
       - Backtracking: backtracking/backtracking.md
+  - Tips & Tricks in Java:
+      - Lamda Expression & Streams: tricks_in_java/lambda_stream.md
 plugins:
   - search
   - mermaid2

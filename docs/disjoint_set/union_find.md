@@ -1,4 +1,4 @@
-# Union-Find Algorithm for Disjoint Set
+## Union-Find Algorithm for Disjoint Set
 
 **Initialization of parents and ranks**:
 
@@ -85,3 +85,5 @@ class UnionRankFind {
     }
 }
 ```
+
+## Kruskal's Algorithm

@@ -1,33 +1,27 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  
-  
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    
-    
-    <link rel="shortcut icon" href="../../img/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <title>Union-Find Algorithm - Data Structures and Algorithms Guide</title>
-    <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
-    <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
-    <link href="../../css/base.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../css/highlight.css">
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../../img/favicon.ico" rel="shortcut icon"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<title>Union-Find Algorithm - Data Structures and Algorithms Guide</title>
+<link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet"/>
+<link href="../../css/font-awesome-4.7.0.css" rel="stylesheet"/>
+<link href="../../css/base.css" rel="stylesheet"/>
+<link href="../../css/highlight.css" rel="stylesheet"/>
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
-
-    <script src="../../js/jquery-3.2.1.min.js"></script>
-    <script src="../../js/bootstrap-3.3.7.min.js"></script>
-    <script src="../../js/highlight.pack.js"></script>
-    
-    <base target="_top">
-    <script>
+<script src="../../js/jquery-3.2.1.min.js"></script>
+<script src="../../js/bootstrap-3.3.7.min.js"></script>
+<script src="../../js/highlight.pack.js"></script>
+<base target="_top"/>
+<script>
       var base_url = '../..';
       var is_top_frame = false;
         
@@ -39,42 +33,33 @@
         ];
 
     </script>
-    <script src="../../js/base.js"></script> 
-</head>
-
+<script src="../../js/base.js"></script>
+</meta></head>
 <body>
 <script>
 if (is_top_frame) { $('body').addClass('wm-top-page'); }
 </script>
-
-
-
 <div class="container-fluid wm-page-content">
-  <a name="_top"></a>
-    
-
-    
-    
-      
-    
-
-  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
-    
-    <div class="wm-article-nav pull-right">
-      <a href="../../graph/detect_cycle_in_directed_graph/" class="btn btn-xs btn-default pull-right">
+<a name="_top"></a>
+<div aria-label="navigation" class="row wm-article-nav-buttons" role="navigation">
+<div class="wm-article-nav pull-right">
+<a class="btn btn-xs btn-default pull-right" href="../../graph/detect_cycle_in_directed_graph/">
         Next
-        <i class="fa fa-chevron-right" aria-hidden="true"></i>
-      </a>
-      <a href="../../graph/detect_cycle_in_directed_graph/" class="btn btn-xs btn-link">
+        <i aria-hidden="true" class="fa fa-chevron-right"></i>
+</a>
+<a class="btn btn-xs btn-link" href="../../graph/detect_cycle_in_directed_graph/">
         Detect Cycle in Directed Graph
       </a>
-    </div>
-    
-  </div>
-
-    
-
-    <h2 id="union-find-algorithm-for-disjoint-set">Union-Find Algorithm for Disjoint Set</h2>
+</div>
+<div class="wm-article-nav">
+<a class="btn btn-xs btn-default pull-left" href="../../matrix/matrix_operations/">
+<i aria-hidden="true" class="fa fa-chevron-left"></i>
+        Previous</a><a class="btn btn-xs btn-link" href="../../matrix/matrix_operations/">
+        Operations on Matrices
+      </a>
+</div>
+</div>
+<h2 id="union-find-algorithm-for-disjoint-set">Union-Find Algorithm for Disjoint Set</h2>
 <p><strong>Initialization of parents and ranks</strong>:</p>
 <pre><code class="language-java">class UnionFind {
     public void initialize(int[] parents, int[] ranks) {
@@ -145,35 +130,100 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 }
 </code></pre>
 <h2 id="kruskals-algorithm">Kruskal's Algorithm</h2>
+<p>With Kruskal's algorithm we find the Minimum Spanning Tree of any Graph. A MST is a graph which has the minimum number of least costly edges which can create a connected graph. In a Kruskal's algorithm we are given an array of edges along with their weights and asked to return an array of edges that are required to create a MST.</p>
+<p><strong>For the given graph below:</strong></p>
+<div class="mermaid">graph TD
+    A --10--&gt; B
+    A --15--&gt; C
+    B --5--&gt; C
+    B --10--&gt; D
+    C --20--&gt; D
+    C --25--&gt; E
+    D --15--&gt; E
+</div>
+<p><strong>The MST is as follows:</strong></p>
+<div class="mermaid">graph TD
+    A --10--&gt; B
+    B --5--&gt; C
+    B --10--&gt; D
+    D --15--&gt; E
+</div>
+<p><strong>Kruskal's Algorithm</strong>:</p>
+<pre><code class="language-java">class Kruskals {
+    // Edge: [src, dest, cost]
+    public List&lt;Edge&gt; kruskalsAlgorithm(Edge[] edges, int totalNodes) {
+        List&lt;Edge&gt; mst = new ArrayList&lt;&gt;();
+        int totalProcessedNode = 1;
+        int[] parent = new int[totalNodes];
+        int[] rank = new int[totalNodes];
+        for (int i = 0; i &lt; totalNodes; ++i) {
+            parent[i] = i;
+        }
 
-  <br>
-    
+        Arrays.sort(edges, (e1, e2) -&gt; e1[2] - e2[2]); // sorting array based on cost
+        for (int i = 0; i &lt; edges.length &amp;&amp; totalProcessedNodes != totalNodes; ++i) {
+            Edge e = edges[i];
+            int src = e[0];
+            int dest = e[1];
+            if (find(src, parent) == find(dest, parent)) {
+                continue; // ignore if edge was already added
+            }
+            totalProcessedNode++;
+            union(src, dest, parent, rank);
+            mst.add(e);
+        }
+        return mst;
+    }
 
-    
-    
-      
-    
+    private void union(int src, int dest, int[] parent, int[] rank) {
+        if (find(src, parent) == find(dest, parent)) {
+            return;
+        }
+        parSrc = find(src, parent);
+        parDest = find(dest, parent);
+        if (rank[parSrc] &gt; rank[parDest]) {
+            parent[parDest] = parSrc;
+        } else if (rank[parDest] &gt; rank[parSrc]) {
+            parent[parSrc] = parDest;
+        } else {
+            parent[parDest] = parSrc;
+            rank[parSrc]++;
+        }
+    }
 
-  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
-    
-    <div class="wm-article-nav pull-right">
-      <a href="../../graph/detect_cycle_in_directed_graph/" class="btn btn-xs btn-default pull-right">
+    private int find(int src, int[] parent) {
+        if (src == parent[src]) {
+            return src;
+        }
+        parent[src] = find(parent[src], parent);
+        return parent[src];
+    }
+}
+</code></pre>
+<br/>
+<div aria-label="navigation" class="row wm-article-nav-buttons" role="navigation">
+<div class="wm-article-nav pull-right">
+<a class="btn btn-xs btn-default pull-right" href="../../graph/detect_cycle_in_directed_graph/">
         Next
-        <i class="fa fa-chevron-right" aria-hidden="true"></i>
-      </a>
-      <a href="../../graph/detect_cycle_in_directed_graph/" class="btn btn-xs btn-link">
+        <i aria-hidden="true" class="fa fa-chevron-right"></i>
+</a>
+<a class="btn btn-xs btn-link" href="../../graph/detect_cycle_in_directed_graph/">
         Detect Cycle in Directed Graph
       </a>
-    </div>
-    
-  </div>
-
-    <br>
 </div>
-
+<div class="wm-article-nav">
+<a class="btn btn-xs btn-default pull-left" href="../../matrix/matrix_operations/">
+<i aria-hidden="true" class="fa fa-chevron-left"></i>
+        Previous</a><a class="btn btn-xs btn-link" href="../../matrix/matrix_operations/">
+        Operations on Matrices
+      </a>
+</div>
+</div>
+<br/>
+</div>
 <footer class="container-fluid wm-page-content">
-  <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+<p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
 </footer>
-
-</body>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
 </html>

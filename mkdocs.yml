@@ -2,6 +2,10 @@ site_name: Data Structures and Algorithms Guide
 theme:
   name: windmill
 nav:
+  - Math:
+    - Formulas: math/formulas.md
+  - Matrices:
+    - Operations on Matrices: matrix/matrix_operations.md
   - Disjoint Set:
     - Union-Find Algorithm: disjoint_set/union_find.md
   - Graph:

@@ -14,6 +14,8 @@ nav:
       - Priority Queue: heap/priority_queue.md
   - Backtracking:
       - Backtracking: backtracking/backtracking.md
+  - Dynamic Programming:
+      - Longest Common Subsequence: dynamic_programming/longest_common_subsequence.md
   - Tips & Tricks in Java:
       - Lamda Expression & Streams: tricks_in_java/lambda_stream.md
 plugins:

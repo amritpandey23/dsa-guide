@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Problem - Coin Sum Combination - Data Structures and Algorithms Guide</title>
+    <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '../..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Problem - Coin Sum Combination", url: "#_top", children: [
+              {title: "Solution using DP Map", url: "#solution-using-dp-map" },
+          ]},
+        ];
+
+    </script>
+    <script src="../../js/base.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+
+    <h1 id="problem-coin-sum-combination">Problem - Coin Sum Combination</h1>
+<p>Given a set of coin values and sum value, our job is to find out the number of ways in which we can include the coins to make the sum value possible. A coin can be picked any number of times.</p>
+<p>Leetcode Problem: <a href="https://leetcode.com/problems/coin-change-ii/description/">518. Coin Change II</a></p>
+<h2 id="solution-using-dp-map">Solution using DP Map</h2>
+<pre><code class="language-java">class CoinSumCombination {
+    public int getCount(int[] coins, int val) {
+        int m = val, n = coins.length;
+        int[][] dp = new int[m + 1][n + 1];
+
+        for (int i = 0; i &lt;= m; ++i) {
+            for (int j = 0; j &lt;= n; ++j) {
+                if (i == 0) {
+                    dp[i][j] = 1; // to make sum zero there is 1 way (not include that coin);
+                } else if (j == 0) {
+                    dp[i][j] = 0; // for sum &gt; 0 there is no way to make that sum by including no coins
+                } else {
+                    dp[i][j] = dp[i][j - 1]; // store number of ways it was possible to make the sum
+                    // by including coins before this coin.
+                    if (coins[j - 1] &lt;= i) {
+                        // if sum is less than the current coin value
+                        int remainingSum = i - coins[j - 1];
+                        dp[i][j] += dp[remainingSum][j];
+                    }
+                }
+            }
+        }
+
+        return dp[m][n];
+    }
+}
+</code></pre>
+
+  <br>
+    
+
+    <br>
+</div>
+
+<footer class="container-fluid wm-page-content">
+  <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+
+</body>
+</html>

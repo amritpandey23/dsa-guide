@@ -3,13 +3,14 @@ theme:
   name: windmill
 nav:
   - Math:
-    - Formulas: math/formulas.md
+      - Formulas: math/formulas.md
   - Matrices:
-    - Operations on Matrices: matrix/matrix_operations.md
+      - Operations on Matrices: matrix/matrix_operations.md
   - Disjoint Set:
-    - Union-Find Algorithm: disjoint_set/union_find.md
+      - Union-Find Algorithm: disjoint_set/union_find.md
   - Graph:
       - Detect Cycle in Directed Graph: graph/detect_cycle_in_directed_graph.md
+      - Dijkstra Shortest Path: graph/dijkstra_shortest_path.md
   - Heap:
       - Priority Queue: heap/priority_queue.md
   - Backtracking:

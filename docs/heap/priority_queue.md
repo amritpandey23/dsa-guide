@@ -16,28 +16,28 @@ graph TD
 
 Heap lets us implement priority queue based on the value of the nodes. If the priority is decided by the value of the element then if the elements are to be dequeued based on maximum value first we implement a Max-Heap and if the elements have to be dequeued based on minimum value first then Min-Heap.
 
-## Usage of Priority Queue in Java
-
-Here is an example of java code that we can use to code a priority queue of all the three kinds: min, max and custom.
+Here is an code that we can use to code a priority queue of all the three kinds: min, max and custom.
 The lamda function is a custom comparator class.
 
-```java
-class PriorityQueueUsage {
-    public static void main(String[] args) {
-        // max-heap or max priority queue
-        PriorityQueue<Integer> maxHeap = new PriorityQueue<>();
-        queue.add(1);
-        queue.add(2);
+=== "Java"
 
-        // min-heap or min priority queue
-        PriorityQueue<Integer> minHeap = new PriorityQueue<>((p1, p2) -> {
-            return -Integer.compare(p1, p2);
-        });
+    ```java linenums="1"
+    class PriorityQueueUsage {
+        public static void main(String[] args) {
+            // max-heap or max priority queue
+            PriorityQueue<Integer> maxHeap = new PriorityQueue<>();
+            queue.add(1);
+            queue.add(2);
 
-        // custom comparator priority queue
-        PriorityQueue<CustomClass> customHeap = new PriorityQueue<>((p1, p2) -> {
-            return Integer.compare(p1.val, p2.val); // val is a integer attribute
-        });
+            // min-heap or min priority queue
+            PriorityQueue<Integer> minHeap = new PriorityQueue<>((p1, p2) -> {
+                return -Integer.compare(p1, p2);
+            });
+
+            // custom comparator priority queue
+            PriorityQueue<CustomClass> customHeap = new PriorityQueue<>((p1, p2) -> {
+                return Integer.compare(p1.val, p2.val); // val is a integer attribute
+            });
+        }
     }
-}
-```
+    ```

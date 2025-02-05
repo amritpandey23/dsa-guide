@@ -1,6 +1,6 @@
 site_name: Data Structures and Algorithms Guide
 theme:
-  name: windmill
+  name: material
 nav:
   - Math:
       - Formulas: math/formulas.md
@@ -22,3 +22,15 @@ nav:
 plugins:
   - search
   - mermaid2
+markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - mdx_math
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML

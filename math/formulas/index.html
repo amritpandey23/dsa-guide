@@ -340,6 +340,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#permutation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permutation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#combination" class="md-nav__link">
+    <span class="md-ellipsis">
+      Combination
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -556,6 +574,28 @@
   
   <span class="md-ellipsis">
     Dijkstra Shortest Path
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph/bellman_ford_algorithm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bellman Ford Shortest Path
     
   </span>
   
@@ -925,6 +965,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#permutation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permutation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#combination" class="md-nav__link">
+    <span class="md-ellipsis">
+      Combination
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1151,6 +1209,22 @@
 <ol>
 <li><a href="https://leetcode.com/problems/powx-n/description/">50. Pow(x, n)</a></li>
 </ol>
+<h2 id="permutation">Permutation</h2>
+<p>A permutation is arrangement of objects in a specific order after being picked up from a set of elements. The permutation can be after picking less number of objects from the set of elements. For example, for a set of <script type="math/tex">\{1, 2, 3\}</script> if we want permutation of two elements we will get permutation as <script type="math/tex">\{(1,2),(2,1),(2,3),(3,2),(1,3),(3,1)\}</script>.</p>
+<p>There is specifc formula to calcuate the number of permutations which we can get after picking <script type="math/tex">r</script> elements from a set of <script type="math/tex">n</script> elements as:</p>
+<p>
+<script type="math/tex; mode=display">^{n}P_{r} = \dfrac{n!}{(n - r)!}</script>
+</p>
+<p>where <script type="math/tex">n!</script> and <script type="math/tex">(n -r)!</script> are the factorial.</p>
+<p>In above example we can calculate permutations as:</p>
+<p>
+<script type="math/tex; mode=display">^{3}P_{2} = \dfrac{3!}{(3 - 2)!} = 6</script>
+</p>
+<h2 id="combination">Combination</h2>
+<p>If we only have to count the combinations of different element without taking into account their arrangements then we calcuate the combination as follows:</p>
+<p>
+<script type="math/tex; mode=display">^{n}C_{r} = \frac{n!}{r!(n - r)!}</script>
+</p>
 
 
 

@@ -41,7 +41,7 @@ Here’s the code:
 
 === "Python"
 
-    ```py
+    ```py linenums="1"
     def detectCycle(graph):
         visited = [False] * len(graph)
         processed = [False] * len(graph)
@@ -169,7 +169,7 @@ We can see that a cycle exist in the graph and also conclude that no matter how 
 
 === "Python"
 
-    ```py
+    ```py linenums="1"
     def detect_cycle(graph):
         indegrees = [0] * len(graph)
 

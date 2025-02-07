@@ -11,6 +11,7 @@ nav:
   - Graph:
       - Detect Cycle in Directed Graph: graph/detect_cycle_in_directed_graph.md
       - Dijkstra Shortest Path: graph/dijkstra_shortest_path.md
+      - Bellman Ford Shortest Path: graph/bellman_ford_algorithm.md
   - Heap:
       - Priority Queue: heap/priority_queue.md
   - Backtracking:

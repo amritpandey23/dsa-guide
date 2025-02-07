@@ -133,3 +133,24 @@ In programming we can use a neat trick called *binary exponentiation* to calcula
 #### Related Problems
 
 1. [50. Pow(x, n)](https://leetcode.com/problems/powx-n/description/)
+
+
+## Permutation
+
+A permutation is arrangement of objects in a specific order after being picked up from a set of elements. The permutation can be after picking less number of objects from the set of elements. For example, for a set of \(\{1, 2, 3\}\) if we want permutation of two elements we will get permutation as \(\{(1,2),(2,1),(2,3),(3,2),(1,3),(3,1)\}\).
+
+There is specifc formula to calcuate the number of permutations which we can get after picking \(r\) elements from a set of \(n\) elements as:
+
+$$^{n}P_{r} = \dfrac{n!}{(n - r)!}$$
+
+where \(n!\) and \((n -r)!\) are the factorial.
+
+In above example we can calculate permutations as:
+
+$$^{3}P_{2} = \dfrac{3!}{(3 - 2)!} = 6$$
+
+## Combination
+
+If we only have to count the combinations of different element without taking into account their arrangements then we calcuate the combination as follows:
+
+$$^{n}C_{r} = \frac{n!}{r!(n - r)!}$$

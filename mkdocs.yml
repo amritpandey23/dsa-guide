@@ -12,10 +12,11 @@ nav:
       - Detect Cycle in Directed Graph: graph/detect_cycle_in_directed_graph.md
       - Dijkstra Shortest Path: graph/dijkstra_shortest_path.md
       - Bellman Ford Shortest Path: graph/bellman_ford_algorithm.md
-  - Heap:
-      - Priority Queue: heap/priority_queue.md
-  - Backtracking:
-      - Backtracking: backtracking/backtracking.md
+  - Tree:
+      - Heap: tree/heap.md
+  - Recursion:
+      - Recursion: recursion/recursion.md
+      - Backtracking: recursion/backtracking.md
   - Dynamic Programming:
       - Longest Common Subsequence: dynamic_programming/longest_common_subsequence.md
   - Tips & Tricks in Java:
@@ -24,10 +25,10 @@ plugins:
   - search
   - mermaid2
 markdown_extensions:
-  - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
-  - mdx_math
+  - admonition
+  - pymdownx.details
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid

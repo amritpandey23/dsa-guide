@@ -1,4 +1,4 @@
-# Priority Queue (Max/Min Heap)
+# Binary Heap
 
 A heap is a complete binary tree in which each node in the tree starting from root has value strictly greater than or less than children node's value. An example is shown below which shows **max-heap** which is a heap where the parent node has strictly greater value than it's child nodes.
 

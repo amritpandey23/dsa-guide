@@ -6,17 +6,16 @@ nav:
       - Formulas: math/formulas.md
   - Matrices:
       - Operations on Matrices: matrix/matrix_operations.md
-  - Disjoint Set:
+  - Recursion:
+      - Recursion: recursion/recursion.md
+      - Backtracking: recursion/backtracking.md
+  - Tree:
+      - Heap: tree/heap.md
       - Union-Find Algorithm: disjoint_set/union_find.md
   - Graph:
       - Detect Cycle in Directed Graph: graph/detect_cycle_in_directed_graph.md
       - Dijkstra Shortest Path: graph/dijkstra_shortest_path.md
       - Bellman Ford Shortest Path: graph/bellman_ford_algorithm.md
-  - Tree:
-      - Heap: tree/heap.md
-  - Recursion:
-      - Recursion: recursion/recursion.md
-      - Backtracking: recursion/backtracking.md
   - Dynamic Programming:
       - Longest Common Subsequence: dynamic_programming/longest_common_subsequence.md
   - Tips & Tricks in Java:
@@ -25,6 +24,7 @@ plugins:
   - search
   - mermaid2
 markdown_extensions:
+  - mdx_math
   - pymdownx.tabbed:
       alternate_style: true
   - admonition

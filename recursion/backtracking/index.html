@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../../heap/priority_queue/">
+        <link rel="prev" href="../recursion/">
       
       
         <link rel="next" href="../../dynamic_programming/longest_common_subsequence/">
@@ -509,7 +509,7 @@
             
   
   <span class="md-ellipsis">
-    Heap
+    Tree
     
   </span>
   
@@ -520,7 +520,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
-            Heap
+            Tree
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -531,11 +531,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../heap/priority_queue/" class="md-nav__link">
+      <a href="../../tree/heap/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Priority Queue
+    Heap
     
   </span>
   
@@ -576,7 +576,7 @@
             
   
   <span class="md-ellipsis">
-    Backtracking
+    Recursion
     
   </span>
   
@@ -587,9 +587,31 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            Backtracking
+            Recursion
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recursion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recursion
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -646,6 +668,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#finding-valid-permutation" class="md-nav__link">
     <span class="md-ellipsis">
       Finding valid permutation
@@ -656,9 +687,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#problem" class="md-nav__link">
+  <a href="#problem-statement" class="md-nav__link">
     <span class="md-ellipsis">
-      Problem
+      Problem Statement
     </span>
   </a>
   
@@ -673,10 +704,25 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#problem_1" class="md-nav__link">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rat-in-a-maze" class="md-nav__link">
     <span class="md-ellipsis">
-      Problem
+      Rat in a Maze
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rat in a Maze">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-statement_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem Statement
     </span>
   </a>
   
@@ -869,6 +915,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#finding-valid-permutation" class="md-nav__link">
     <span class="md-ellipsis">
       Finding valid permutation
@@ -879,9 +934,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#problem" class="md-nav__link">
+  <a href="#problem-statement" class="md-nav__link">
     <span class="md-ellipsis">
-      Problem
+      Problem Statement
     </span>
   </a>
   
@@ -896,10 +951,25 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#problem_1" class="md-nav__link">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rat-in-a-maze" class="md-nav__link">
     <span class="md-ellipsis">
-      Problem
+      Rat in a Maze
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rat in a Maze">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-statement_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem Statement
     </span>
   </a>
   
@@ -936,19 +1006,52 @@
 
 
 <h1 id="backtracking">Backtracking</h1>
+<h2 id="introduction">Introduction</h2>
 <p>Backtracking is a strategy where we solve a problem for all possible patterns and stop after receiving the best solution.
 The base idea to retract our solution to the best possible condition from where other solution can be made of branched is to undo any changes we've made.
 What I mean by that is the magic of backtracking is to <strong>rub out the non-working solution</strong> to a point where the solution can be made working again.</p>
 <h2 id="finding-valid-permutation">Finding valid permutation</h2>
-<h4 id="problem">Problem</h4>
+<h4 id="problem-statement">Problem Statement</h4>
 <p>Given a string "ABC" find out if permutation "CBA" is possible from all the characters of the string.</p>
 <h4 id="solution">Solution</h4>
 <p>The permutations of string "ABC" are {"ABC", "ACB", "BCA", "BAC", "CAB", "CBA"}.
-As we can see the total number of permutations for "ABC" are <code>Factorial(3)</code> which equals <code>6</code>.
+As we can see the total number of permutations for "ABC" are (3!) which equals (6).
 And after generating the permutations "CBA" is also a valid permutation.</p>
 <p>We can solve this problem in a problem by applying backtracking as follows:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">BacktrackingExample</span><span class="w"> </span><span class="p">{</span>
-<span class="w">   </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">hasPermutation</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">pattern</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Java</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">class</span> <span class="nc">BacktrackingExample</span><span class="w"> </span><span class="p">{</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">hasPermutation</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">pattern</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">usedMap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[</span><span class="n">text</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="o">]</span><span class="p">;</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">isPermutePossible</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="n">pattern</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">usedMap</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
@@ -977,8 +1080,12 @@ And after generating the permutations "CBA" is also a valid permutation.</p>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span><span class="w"> </span>
 <span class="p">}</span>
-</code></pre></div>
-<h4 id="problem_1">Problem</h4>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<h2 id="rat-in-a-maze">Rat in a Maze</h2>
+<h4 id="problem-statement_1">Problem Statement</h4>
 <p>Rat in a Maze. You have maze where the rat is left to wander in the start and is forced to find the path outside of the maze; rat can only move down and right direction. This 2D arrays shows the maze:</p>
 <div class="highlight"><pre><span></span><code>[[0, 1, 0, 0],
  [0, 0, 1, 0],
@@ -987,7 +1094,27 @@ And after generating the permutations "CBA" is also a valid permutation.</p>
 </code></pre></div>
 <p>The value <code>2</code> in the array is the position where rat can escape or exit the maze. The rat always start at index <code>(0, 0)</code>.</p>
 <h4 id="solution_1">Solution</h4>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RatInMaze</span><span class="w"> </span><span class="p">{</span>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Java</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RatInMaze</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">canRatEscape</span><span class="p">(</span><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="n">maze</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">end</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">maze</span><span class="p">.</span><span class="na">length</span><span class="p">;</span>
 <span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">maze</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span>
@@ -1005,7 +1132,10 @@ And after generating the permutations "CBA" is also a valid permutation.</p>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
 
 
 

@@ -634,7 +634,7 @@
             
   
   <span class="md-ellipsis">
-    Heap
+    Tree
     
   </span>
   
@@ -645,7 +645,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
-            Heap
+            Tree
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -656,11 +656,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../heap/priority_queue/" class="md-nav__link">
+      <a href="../../tree/heap/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Priority Queue
+    Heap
     
   </span>
   
@@ -699,7 +699,7 @@
             
   
   <span class="md-ellipsis">
-    Backtracking
+    Recursion
     
   </span>
   
@@ -710,7 +710,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            Backtracking
+            Recursion
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -721,7 +721,29 @@
   
   
     <li class="md-nav__item">
-      <a href="../../backtracking/backtracking/" class="md-nav__link">
+      <a href="../../recursion/recursion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recursion
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recursion/backtracking/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1002,7 +1024,7 @@
 <h1 id="math-formulas-and-tricks">Math Formulas and Tricks</h1>
 <p>Here we are going to discuss common math formula and tricks used in programming.</p>
 <h2 id="greatest-common-divisor">Greatest Common Divisor</h2>
-<p>GCD or Highest Common Factor(HCF) is the largest value number which can divide two given numbers. For example GCD of <script type="math/tex">6, 12</script> is <script type="math/tex"> 6</script> as it is the largest number which can divide both <script type="math/tex">6 </script>  and <script type="math/tex">12 </script>.  To find a GCD of two numbers both of them must be non-zero.</p>
+<p>GCD or Highest Common Factor(HCF) is the largest value number which can divide two given numbers. For example GCD of (6, 12) is ( 6) as it is the largest number which can divide both (6 )  and (12 ).  To find a GCD of two numbers both of them must be non-zero.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Java</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1056,10 +1078,8 @@
 <li><a href="https://codeforces.com/contest/527/problem/A">A. Playing with Paper</a></li>
 </ol>
 <h2 id="lowest-common-multiple">Lowest Common Multiple</h2>
-<p>LCM is the lowest value number (except 1) which can be divided by given two numbers. For example LCM of <script type="math/tex">4, 6</script> is <script type="math/tex">12</script>. The formula of LCM requires the GCD value of two given numbers and then we can have LCM as follows:</p>
-<p>
-<script type="math/tex; mode=display">LCM(x, y) = {x \times y \over GCD(x, y)}</script>
-</p>
+<p>LCM is the lowest value number (except 1) which can be divided by given two numbers. For example LCM of (4, 6) is (12). The formula of LCM requires the GCD value of two given numbers and then we can have LCM as follows:</p>
+<p>$$LCM(x, y) = {x \times y \over GCD(x, y)}$$</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Java</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1077,8 +1097,8 @@
 </div>
 </div>
 <h2 id="check-for-prime">Check for Prime</h2>
-<p>Prime numbers in Math are the numbers which can be divided by <script type="math/tex">1 </script> and the number themselves. For example <script type="math/tex">2, 3, 5, 7</script> etc. are all prime numbers. <script type="math/tex">1</script> is not considered prime number. Negative numbers cannot be prime.</p>
-<p>An interesting observation in natural numbers line is that prime numbers always repeat themselves at a factored length of <script type="math/tex">6 </script> and <script type="math/tex">8 </script> starting from number <script type="math/tex">3</script>.</p>
+<p>Prime numbers in Math are the numbers which can be divided by (1 ) and the number themselves. For example (2, 3, 5, 7) etc. are all prime numbers. (1) is not considered prime number. Negative numbers cannot be prime.</p>
+<p>An interesting observation in natural numbers line is that prime numbers always repeat themselves at a factored length of (6 ) and (8 ) starting from number (3).</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Java</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1132,11 +1152,9 @@
 </div>
 </div>
 <h2 id="power-of-a-number">Power of a number</h2>
-<p>The power, let's say <script type="math/tex">x</script> of a number <script type="math/tex">y</script> is the value which we get if get to multiple the number by itself <script type="math/tex">x</script> number of times.</p>
-<p>
-<script type="math/tex; mode=display">x^{y} = {x \times x \times x \times ... (y \space times)}</script>
-</p>
-<p>In programming we can use a neat trick called <em>binary exponentiation</em> to calculate a power of a number in <script type="math/tex">O(LogN)</script> time instead of <script type="math/tex">O(n)</script> time.</p>
+<p>The power, let's say (x) of a number (y) is the value which we get if get to multiple the number by itself (x) number of times.</p>
+<p>$$x^{y} = {x \times x \times x \times ... (y \space times)}$$</p>
+<p>In programming we can use a neat trick called <em>binary exponentiation</em> to calculate a power of a number in (O(LogN)) time instead of (O(n)) time.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Java</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1210,21 +1228,15 @@
 <li><a href="https://leetcode.com/problems/powx-n/description/">50. Pow(x, n)</a></li>
 </ol>
 <h2 id="permutation">Permutation</h2>
-<p>A permutation is arrangement of objects in a specific order after being picked up from a set of elements. The permutation can be after picking less number of objects from the set of elements. For example, for a set of <script type="math/tex">\{1, 2, 3\}</script> if we want permutation of two elements we will get permutation as <script type="math/tex">\{(1,2),(2,1),(2,3),(3,2),(1,3),(3,1)\}</script>.</p>
-<p>There is specifc formula to calcuate the number of permutations which we can get after picking <script type="math/tex">r</script> elements from a set of <script type="math/tex">n</script> elements as:</p>
-<p>
-<script type="math/tex; mode=display">^{n}P_{r} = \dfrac{n!}{(n - r)!}</script>
-</p>
-<p>where <script type="math/tex">n!</script> and <script type="math/tex">(n -r)!</script> are the factorial.</p>
+<p>A permutation is arrangement of objects in a specific order after being picked up from a set of elements. The permutation can be after picking less number of objects from the set of elements. For example, for a set of ({1, 2, 3}) if we want permutation of two elements we will get permutation as ({(1,2),(2,1),(2,3),(3,2),(1,3),(3,1)}).</p>
+<p>There is specifc formula to calcuate the number of permutations which we can get after picking (r) elements from a set of (n) elements as:</p>
+<p>$$^{n}P_{r} = \dfrac{n!}{(n - r)!}$$</p>
+<p>where (n!) and ((n -r)!) are the factorial.</p>
 <p>In above example we can calculate permutations as:</p>
-<p>
-<script type="math/tex; mode=display">^{3}P_{2} = \dfrac{3!}{(3 - 2)!} = 6</script>
-</p>
+<p>$$^{3}P_{2} = \dfrac{3!}{(3 - 2)!} = 6$$</p>
 <h2 id="combination">Combination</h2>
 <p>If we only have to count the combinations of different element without taking into account their arrangements then we calcuate the combination as follows:</p>
-<p>
-<script type="math/tex; mode=display">^{n}C_{r} = \frac{n!}{r!(n - r)!}</script>
-</p>
+<p>$$^{n}C_{r} = \frac{n!}{r!(n - r)!}$$</p>
 
 
 

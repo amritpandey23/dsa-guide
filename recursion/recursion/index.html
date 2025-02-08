@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../detect_cycle_in_directed_graph/">
+        <link rel="prev" href="../../tree/heap/">
       
       
-        <link rel="next" href="../bellman_ford_algorithm/">
+        <link rel="next" href="../backtracking/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Dijkstra Shortest Path - Data Structures and Algorithms Guide</title>
+        <title>Recursion - Data Structures and Algorithms Guide</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dijkstra-shortest-path-algorithm" class="md-skip">
+        <a href="#introduction" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Dijkstra Shortest Path
+              Recursion
             
           </span>
         </div>
@@ -383,19 +383,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -410,7 +408,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Graph
@@ -424,7 +422,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../detect_cycle_in_directed_graph/" class="md-nav__link">
+      <a href="../../graph/detect_cycle_in_directed_graph/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -443,19 +441,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../graph/dijkstra_shortest_path/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -465,7 +454,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -478,7 +466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bellman_ford_algorithm/" class="md-nav__link">
+      <a href="../../graph/bellman_ford_algorithm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -569,17 +557,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -594,7 +584,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Recursion
@@ -605,10 +595,29 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../recursion/recursion/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Recursion
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -618,6 +627,114 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-factorial-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Factorial Function
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-leap-of-faith" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Leap of Faith
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Leap of Faith">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#applying-the-leap-of-faith-to-factorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applying the Leap of Faith to Factorial
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-computing-fibonacci-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Computing Fibonacci Numbers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tail-recursion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tail Recursion
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tail Recursion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-tail-recursive-factorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Tail-Recursive Factorial
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-of-recursion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use of Recursion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -630,7 +747,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../recursion/backtracking/" class="md-nav__link">
+      <a href="../backtracking/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -799,8 +916,104 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-factorial-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Factorial Function
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-leap-of-faith" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Leap of Faith
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Leap of Faith">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#applying-the-leap-of-faith-to-factorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applying the Leap of Faith to Factorial
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-computing-fibonacci-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Computing Fibonacci Numbers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tail-recursion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tail Recursion
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tail Recursion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-tail-recursive-factorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Tail-Recursive Factorial
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-of-recursion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use of Recursion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -816,72 +1029,115 @@
 
 
 
-<h1 id="dijkstra-shortest-path-algorithm">Dijkstra Shortest Path Algorithm</h1>
-<p>DSP is a graph algorithm to find out the shortest distance to every node starting from a given node.</p>
+  <h1>Recursion</h1>
+
+<h2 id="introduction">Introduction</h2>
+<p>Recursion is a fundamental concept in programming where a function calls itself to solve smaller instances of a problem. It is widely used in algorithms for sorting, searching, dynamic programming, and more. However, understanding recursion can be challenging, especially when it comes to trusting the recursive calls. This is where the <strong>Leap of Faith</strong> principle comes into play.</p>
+<p>Recursion occurs when a function calls itself to solve a problem. Every recursive function has two key components:</p>
+<ol>
+<li><strong>Base Case</strong>: A condition that terminates the recursion.</li>
+<li><strong>Recursive Case</strong>: A call to the same function with a smaller input.</li>
+</ol>
+<h3 id="example-factorial-function">Example: Factorial Function</h3>
+<p>The factorial of a number ( n ) (denoted as ( n! )) is defined as:
+[
+ n! = \begin{cases}
+1, &amp; \text{if } n = 0 \
+n \times (n - 1)!, &amp; \text{otherwise}
+\end{cases}
+]</p>
+<p>This can be implemented as:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Java</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DSP</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">findShortestPath</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">node</span><span class="p">,</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Pair</span><span class="o">&gt;[]</span><span class="w"> </span><span class="n">graph</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">PriorityQueue</span><span class="o">&lt;</span><span class="n">Pair</span><span class="o">&gt;</span><span class="w"> </span><span class="n">queue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PriorityQueue</span><span class="o">&lt;&gt;</span><span class="p">((</span><span class="n">p1</span><span class="p">,</span><span class="w"> </span><span class="n">p2</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">p2</span><span class="p">.</span><span class="na">dist</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">p1</span><span class="p">.</span><span class="na">dist</span><span class="p">;</span>
-<span class="w">        </span><span class="p">});</span>
-<span class="w">        </span><span class="kt">boolean</span><span class="o">[]</span><span class="w"> </span><span class="n">seen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">boolean</span><span class="o">[</span><span class="n">graph</span><span class="p">.</span><span class="na">length</span><span class="o">]</span><span class="p">;</span>
-<span class="w">        </span><span class="n">queue</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Pair</span><span class="p">(</span><span class="n">node</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">));</span>
-<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">queue</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">curr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">queue</span><span class="p">.</span><span class="na">poll</span><span class="p">();</span>
-<span class="w">            </span><span class="n">seen</span><span class="o">[</span><span class="n">curr</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
-<span class="w">            </span><span class="c1">// process the node here</span>
-<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Pair</span><span class="w"> </span><span class="n">nbr</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">graph</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">seen</span><span class="o">[</span><span class="n">nbr</span><span class="p">.</span><span class="na">node</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                    </span><span class="n">queue</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Pair</span><span class="p">(</span><span class="n">nbr</span><span class="p">.</span><span class="na">node</span><span class="p">,</span><span class="w"> </span><span class="n">nbr</span><span class="p">.</span><span class="na">dist</span><span class="p">));</span>
-<span class="w">                </span><span class="p">}</span>
-<span class="w">            </span><span class="p">}</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Pair</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">node</span><span class="p">;</span>
-<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">dist</span><span class="p">;</span>
-
-<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="nf">Pair</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">node</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">dist</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">node</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">node</span><span class="p">;</span>
-<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">dist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dist</span><span class="p">;</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">}</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">factorial</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// Base case</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// Recursive case</span>
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
+<h2 id="the-leap-of-faith">The Leap of Faith</h2>
+<p>When working with recursion, it is crucial to <strong>trust</strong> that the function correctly solves smaller instances. Instead of manually tracing each recursive call, assume that the function works for a smaller value and build upon that assumption.</p>
+<h3 id="applying-the-leap-of-faith-to-factorial">Applying the Leap of Faith to Factorial</h3>
+<ul>
+<li>Assume <code>factorial(n-1)</code> correctly computes ( (n-1)! ).</li>
+<li>Then, <code>factorial(n) = n * (n-1)!</code> must also be correct.</li>
+</ul>
+<p>This approach makes reasoning about recursion easier and aligns with <strong>mathematical induction</strong>.</p>
+<h3 id="example-computing-fibonacci-numbers">Example: Computing Fibonacci Numbers</h3>
+<p>The Fibonacci sequence is defined as:
+[
+F(n) = \begin{cases}
+0, &amp; \text{if } n = 0 \
+1, &amp; \text{if } n = 1 \
+F(n-1) + F(n-2), &amp; \text{otherwise}
+\end{cases}
+]</p>
+<p>Implementation:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Java</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">fibonacci</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// Base case</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// Base case</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span><span class="w"> </span><span class="c1">// Recursive case</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<p>Using the Leap of Faith:</p>
+<ul>
+<li>Assume <code>fibonacci(n-1)</code> and <code>fibonacci(n-2)</code> correctly compute ( F(n-1) ) and ( F(n-2) ).</li>
+<li>Then, <code>fibonacci(n) = fibonacci(n-1) + fibonacci(n-2)</code> must also be correct.</li>
+</ul>
+<details class="question">
+<summary>Question</summary>
+<p>Given the root of a binary tree, return the number of the nodes in the tree.</p>
+<p><em>Hint</em>: $$F(root) = F(root \rightarrow left) + F(root \rightarrow right)$$</p>
+</details>
+<h2 id="tail-recursion">Tail Recursion</h2>
+<p>Tail recursion is a special form of recursion where the recursive call is the last operation in the function, allowing for optimizations like <strong>tail call elimination</strong>.</p>
+<h3 id="example-tail-recursive-factorial">Example: Tail-Recursive Factorial</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Java</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">factorialTail</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">accumulator</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">accumulator</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">factorialTail</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">accumulator</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">factorial</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">factorialTail</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<p>Here, the recursive call does not need extra space on the call stack, improving efficiency.</p>
+<h2 id="use-of-recursion">Use of Recursion</h2>
+<p>Recursion is useful for problems with a natural recursive structure, such as:</p>
+<ul>
+<li>Tree and graph traversal (e.g., Depth-First Search)</li>
+<li>Divide and conquer algorithms (e.g., Merge Sort, Quick Sort)</li>
+<li>Dynamic programming (e.g., Fibonacci with memoization)</li>
+</ul>
 
 
 

@@ -1,4 +1,5 @@
 ## Introduction
+
 Recursion is a fundamental concept in programming where a function calls itself to solve smaller instances of a problem. It is widely used in algorithms for sorting, searching, dynamic programming, and more. However, understanding recursion can be challenging, especially when it comes to trusting the recursive calls. This is where the **Leap of Faith** principle comes into play.
 
 Recursion occurs when a function calls itself to solve a problem. Every recursive function has two key components:

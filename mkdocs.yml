@@ -4,6 +4,8 @@ theme:
 nav:
   - Math:
       - Formulas: math/formulas.md
+  - Arrays:
+      - Sliding Window: arrays/sliding_window.md
   - Matrices:
       - Operations on Matrices: matrix/matrix_operations.md
   - Recursion:

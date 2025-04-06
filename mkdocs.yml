@@ -31,6 +31,7 @@ nav:
         - Interval/Range: dynamic_programming/patterns/interval_range.md
       - Editorials:
         - Longest Common Subsequence: dynamic_programming/editorials/longest_common_subsequence.md
+        - Maximum Subarray Sum: dynamic_programming/editorials/max_subarray_sum.md
   - Tips & Tricks in Java:
       - Lamda Expression & Streams: tricks_in_java/lambda_stream.md
 plugins:

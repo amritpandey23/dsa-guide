@@ -5,6 +5,8 @@ nav:
   - Math:
       - Formulas: math/formulas.md
   - Arrays:
+      - Algorithms:
+        - Sorting: arrays/algorithms/sorting.md
       - Patterns:
         - Sliding Window: arrays/patterns/sliding_window.md
   - Matrices:

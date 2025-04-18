@@ -12,6 +12,6 @@ Anyone.
 
 Read how to do DSA here: [A simple path to get good in DSA in 2025](https://amritpandey.io/a-simple-path-to-get-good-in-dsa-in-2025/)
 
-### 🗂️ Topics Covered
+## 🗂️ Topics Covered
 
 [To be updated]

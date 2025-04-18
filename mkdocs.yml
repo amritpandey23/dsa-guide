@@ -35,8 +35,6 @@ nav:
         - Longest Common Subsequence: dynamic_programming/editorials/longest_common_subsequence.md
         - Maximum Subarray Sum: dynamic_programming/editorials/max_subarray_sum.md
         - Coin Sum Combination: dynamic_programming/editorials/coin_sum_combination.md
-  - Tips & Tricks in Java:
-      - Lamda Expression & Streams: tricks_in_java/lambda_stream.md
 plugins:
   - search
   - mermaid2

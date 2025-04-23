@@ -2,6 +2,8 @@
 
 DSP is a graph algorithm to find out the shortest distance to every node starting from a given node.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XB4MIexjvY0?si=N-D3CVrnEYy5CgWA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 === "Java"
 
     ```java linenums="1"
@@ -35,4 +37,3 @@ DSP is a graph algorithm to find out the shortest distance to every node startin
         }
     }
     ```
-

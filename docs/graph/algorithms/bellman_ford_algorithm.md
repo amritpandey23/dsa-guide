@@ -5,6 +5,8 @@ It is a dynamic programming algorithm.
 
 We have to be given a set of edges with their weights and total number of nodes.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FtN3BYH2Zes?si=CPGq43pnCJ07JepS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 === "Java"
 
     ```java linenums="1"

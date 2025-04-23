@@ -67,6 +67,8 @@ Here’s the code:
         return False
     ```
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rKQaZuoUR4M?si=05lyPM9W4ia4Uazk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Breadth-First Search (BFS) Approach
 
 To understand the BFS-based approach, it’s essential to first understand [topological sorting](#topological-sorting-algorithm) of directed graphs. 
@@ -150,6 +152,7 @@ Topological sorting processes nodes in decreasing order of their **in-degrees**.
                     queue.append(n)
     ```
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eL-KzMXSXXI?si=bONoNQPjo5M_WLd1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Khan's Algorithm for Cycle Detection
 

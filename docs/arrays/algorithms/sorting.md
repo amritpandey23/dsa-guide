@@ -2,6 +2,8 @@
 
 ## Bubble Sort  
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Jdtq5uKz-w4?si=360-3eX7q5dMbcwT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 **Definition:**  
 Repeatedly swaps adjacent elements if they are in the wrong order.  
 
@@ -30,6 +32,8 @@ Repeatedly swaps adjacent elements if they are in the wrong order.
 \(O(1)\)
 
 ## Selection Sort  
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GUDLRan2DWM?si=ckb2Z6RRJBiUcjEP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 **Definition:**  
 Repeatedly selects the minimum element and moves it to the sorted portion of the array.  
@@ -64,6 +68,8 @@ Repeatedly selects the minimum element and moves it to the sorted portion of the
 
 ## Insertion Sort  
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/i-SKeOcBwko?si=hiqRaxIApkJRWxoq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 **Definition:**  
 Builds the final sorted array one item at a time.  
 
@@ -95,6 +101,8 @@ Builds the final sorted array one item at a time.
 \(O(1)\)
 
 ## Merge Sort  
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TzeBrDU-JaY?si=_D1r0eD54flkRLWG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 **Definition:**  
 Divides the array into halves, sorts them and merges the sorted halves.  
@@ -145,6 +153,8 @@ Divides the array into halves, sorts them and merges the sorted halves.
 
 ## Quick Sort  
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/COk73cpQbFQ?si=baHCyM3UYpVh0WCP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 **Definition:**  
 Picks a pivot and partitions the array such that elements less than pivot are left, greater are right.  
 
@@ -190,6 +200,8 @@ Picks a pivot and partitions the array such that elements less than pivot are le
 \(O(\log n)\)
 
 ## Heap Sort  
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HqPJF2L5h9U?si=s0Ak24y_0SVPD-Uk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 **Definition:**  
 Builds a max heap and repeatedly extracts the maximum element.  
@@ -238,6 +250,8 @@ Builds a max heap and repeatedly extracts the maximum element.
 
 ## Radix Sort  
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xhr26ia4k38?si=TrVpSFlJleTR8b6e" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 **Definition:**  
 Sorts numbers digit by digit starting from least significant digit.  
 
@@ -283,6 +297,8 @@ Sorts numbers digit by digit starting from least significant digit.
 
 ## Bucket Sort  
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NvZG0dZ60RQ?si=QlYBwMBxPscXyDwN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 **Definition:**  
 Divides elements into buckets and sorts each bucket individually.  
 
@@ -318,6 +334,8 @@ Divides elements into buckets and sorts each bucket individually.
 \(O(n + k)\)
 
 ## Counting Sort  
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1mh2vilbZMg?si=hXwxflhJDLi3C5Ou" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 **Definition:**  
 Counts the occurrences of each element and places them in the correct sorted position using a count array.  

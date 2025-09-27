@@ -39,6 +39,58 @@ We can optimize the above approach by:
 
 Here’s the code:
 
+=== "Java"
+
+    ```java linenums="1"
+    public class CycleDetectionDFS {
+        public boolean detectCycle(int n, int[][] edges) {
+            boolean[] visited = new boolean[n];
+            boolean[] processed = new boolean[n];
+            List<Integer>[] graph = new ArrayList[n];
+            
+            // Initialize graph
+            for (int i = 0; i < n; i++) {
+                graph[i] = new ArrayList<>();
+            }
+            
+            // Build graph
+            for (int[] edge : edges) {
+                int from = edge[0];
+                int to = edge[1];
+                graph[from].add(to);
+            }
+            
+            // Check each unprocessed node
+            for (int node = 0; node < n; node++) {
+                if (!processed[node]) {
+                    if (detectCycleUtil(node, graph, visited, processed)) {
+                        return true;
+                    }
+                }
+            }
+            
+            return false;
+        }
+        
+        private boolean detectCycleUtil(int node, List<Integer>[] graph, 
+                                      boolean[] visited, boolean[] processed) {
+            visited[node] = true;
+            processed[node] = true;
+            
+            for (int nbr : graph[node]) {
+                if (visited[nbr]) {  // Cycle detected
+                    return true;
+                } else if (detectCycleUtil(nbr, graph, visited, processed)) {
+                    return true;
+                }
+            }
+            
+            visited[node] = false;  // Backtrack
+            return false;
+        }
+    }
+    ```
+
 === "Python"
 
     ```py linenums="1"
@@ -169,6 +221,55 @@ graph LR
 We can see that a cycle exist in the graph and also conclude that no matter how we process this graph, topological sort can never exist!
 
 **Khan's algorithm** is a modification of the topological sorting algorithm. By counting the nodes added to the queue, we can determine if the graph contains a cycle. If the count of processed nodes equals the total number of nodes in the graph, it implies the absence of cycles.
+
+=== "Java"
+
+    ```java linenums="1"
+    public class CycleDetection {
+        public boolean detectCycle(int n, int[][] edges) {
+            int[] indegrees = new int[n];
+            List<Integer>[] graph = new ArrayList[n];
+            
+            // Initialize graph
+            for (int i = 0; i < n; i++) {
+                graph[i] = new ArrayList<>();
+            }
+            
+            // Build graph and compute in-degrees
+            for (int[] edge : edges) {
+                int from = edge[0];
+                int to = edge[1];
+                indegrees[to]++;
+                graph[from].add(to);
+            }
+            
+            Queue<Integer> queue = new LinkedList<>();
+            int count = 0;
+            
+            // Add nodes with 0 in-degree to queue
+            for (int i = 0; i < n; i++) {
+                if (indegrees[i] == 0) {
+                    queue.offer(i);
+                    count++;
+                }
+            }
+            
+            // Process nodes
+            while (!queue.isEmpty()) {
+                int curr = queue.poll();
+                for (int nbr : graph[curr]) {
+                    indegrees[nbr]--;
+                    if (indegrees[nbr] == 0) {
+                        queue.offer(nbr);
+                        count++;
+                    }
+                }
+            }
+            
+            return count != n; // If count != n, cycle exists
+        }
+    }
+    ```
 
 === "Python"
 

@@ -6,35 +6,36 @@ nav:
       - Formulas: math/formulas.md
   - Arrays:
       - Algorithms:
-        - Sorting: arrays/algorithms/sorting.md
+          - Sorting: arrays/algorithms/sorting.md
       - Patterns:
-        - Sliding Window: arrays/patterns/sliding_window.md
+          - Sliding Window: arrays/patterns/sliding_window.md
   - Matrices:
       - Operations on Matrices: matrix/matrix_operations.md
   - Recursion:
       - Patterns:
-        - Basic Recursion: recursion/patterns/recursion.md
-        - Backtracking: recursion/patterns/backtracking.md
+          - Basic Recursion: recursion/patterns/recursion.md
+          - Backtracking: recursion/patterns/backtracking.md
   - Tree:
       - Algorithms:
-        - Binary Search Tree: tree/algorithms/binary_search_tree.md
-        - Heap: tree/algorithms/heap.md
-        - Union-Find Algorithm: tree/algorithms/union_find.md
-        - AVL Tree: tree/algorithms/avl_tree.md
+          - Binary Search Tree: tree/algorithms/binary_search_tree.md
+          - Heap: tree/algorithms/heap.md
+          - Union-Find Algorithm: tree/algorithms/union_find.md
+          - AVL Tree: tree/algorithms/avl_tree.md
   - Graph:
       - Algorithms:
-        - Detect Cycle in Directed Graph: graph/algorithms/detect_cycle_in_directed_graph.md
-        - Dijkstra Shortest Path: graph/algorithms/dijkstra_shortest_path.md
-        - Bellman Ford Shortest Path: graph/algorithms/bellman_ford_algorithm.md
+          - Detect Cycle in Directed Graph: graph/algorithms/detect_cycle_in_directed_graph.md
+          - Dijkstra Shortest Path: graph/algorithms/dijkstra_shortest_path.md
+          - Bellman Ford Shortest Path: graph/algorithms/bellman_ford_algorithm.md
+          - Bridges in Graph: graph/algorithms/bridges_in_graph.md
   - Dynamic Programming:
       - Patterns:
-        - Traversal: dynamic_programming/patterns/traversal.md
-        - Optimal Substructure: dynamic_programming/patterns/optimal_substructure.md
-        - Interval/Range: dynamic_programming/patterns/interval_range.md
+          - Traversal: dynamic_programming/patterns/traversal.md
+          - Optimal Substructure: dynamic_programming/patterns/optimal_substructure.md
+          - Interval/Range: dynamic_programming/patterns/interval_range.md
       - Editorials:
-        - Longest Common Subsequence: dynamic_programming/editorials/longest_common_subsequence.md
-        - Maximum Subarray Sum: dynamic_programming/editorials/max_subarray_sum.md
-        - Coin Sum Combination: dynamic_programming/editorials/coin_sum_combination.md
+          - Longest Common Subsequence: dynamic_programming/editorials/longest_common_subsequence.md
+          - Maximum Subarray Sum: dynamic_programming/editorials/max_subarray_sum.md
+          - Coin Sum Combination: dynamic_programming/editorials/coin_sum_combination.md
 plugins:
   - search
   - mermaid2

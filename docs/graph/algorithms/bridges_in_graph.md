@@ -20,63 +20,65 @@ We will use Tarjan's algorithm to find out the bridges in a graph.
 
     ```java linenums="1"
     class Solution {
-		public List<List<Integer>> criticalConnections(int n, List<List<Integer>> connections) {
-			Map<Integer, Integer> disc = new HashMap<>(); // ✅ FIX: use separate map for discovery time
-			Map<Integer, Integer> low = new HashMap<>(); // ✅ FIX: separate map for low values
-			Set<Integer> visited = new HashSet<>();
-			List<Integer>[] graph = buildGraph(n, connections);
+        public List<List<Integer>> criticalConnections(int n, List<List<Integer>> connections) {
+            List<Integer>[] graph = buildGraph(n, connections);
+            Map<Integer, Integer> disc, low;
+            disc = new HashMap<>();
+            low = new HashMap<>();
+            Set<Integer> visited = new HashSet<>();
+            dfs(0, -1, 1, visited, low, disc, graph);
+            return Ans;
+        }
 
-			List<List<Integer>> Ans = new ArrayList<>();
+        private List<List<Integer>> Ans = new ArrayList<>();
 
-			dfs(0, -1, visited, disc, low, graph, Ans);
+        private void dfs(int src, int parent, int startTime, Set<Integer> visited,
+                Map<Integer, Integer> low, Map<Integer, Integer> disc, List<Integer>[] graph) {
+            disc.put(src, startTime);
+            low.put(src, startTime);
+            visited.add(src);
 
-			return Ans;
-		}
+            for (int nbr : graph[src]) {
+                if (nbr == parent) { // ignore parent node
+                    continue;
+                }
+                if (visited.contains(nbr)) {
+                    // if it's already visited it means that
+                    // we've come to this node after traversing that node
+                    // which again means it's low hasn't been processed yet
+                    // so, we have to read the discovery value here.
+                    low.put(src, Math.min(low.get(src), disc.get(nbr)));
+                } else {
+                    // else go into the neighbor node first
+                    dfs(nbr, src, startTime + 1, visited, low, disc, graph);
+                    // the neighbor now already have it's low value ready
+                    // if it's low value is more than the current node's
+                    // discovery value then we have a bridge!
+                    if (low.get(nbr) > disc.get(src)) {
+                        Ans.add(Arrays.asList(src, nbr));
+                    }
+                    // otherwise, we will update the current node's low
+                    // value with the neighbor's already calculated low
+                    // value.
+                    low.put(src, Math.min(low.get(src), low.get(nbr)));
+                }
+            }
+        }
 
-		private static int time = 1; // ✅ FIX: renamed startTime to time and keep it resettable
-
-		private void dfs(int src, int parent, Set<Integer> visited,
-				Map<Integer, Integer> disc, Map<Integer, Integer> low,
-				List<Integer>[] graph, List<List<Integer>> Ans) {
-
-			visited.add(src);
-			disc.put(src, time);
-			low.put(src, time);
-			time++;
-
-			for (int nbr : graph[src]) {
-				if (nbr == parent)
-					continue; // ✅ FIX: skip the parent node
-
-				if (!visited.contains(nbr)) {
-					dfs(nbr, src, visited, disc, low, graph, Ans);
-					low.put(src, Math.min(low.get(src), low.get(nbr)));
-
-					// ✅ FIX: correct bridge condition using low[nbr] > disc[src]
-					if (low.get(nbr) > disc.get(src)) {
-						Ans.add(Arrays.asList(src, nbr));
-					}
-				} else {
-					// ✅ FIX: back-edge update
-					low.put(src, Math.min(low.get(src), disc.get(nbr)));
-				}
-			}
-		}
-
-		private List<Integer>[] buildGraph(int n, List<List<Integer>> conns) {
-			List<Integer>[] graph = new List[n];
-			for (int i = 0; i < n; ++i) {
-				graph[i] = new ArrayList<>();
-			}
-			for (List<Integer> conn : conns) {
-				int u = conn.get(0);
-				int v = conn.get(1);
-				graph[u].add(v);
-				graph[v].add(u);
-			}
-			return graph;
-		}
-	}
+        private List<Integer>[] buildGraph(int n, List<List<Integer>> conns) {
+            List<Integer>[] graph = new List[n];
+            for (int i = 0; i < n; ++i) {
+                graph[i] = new ArrayList<>();
+            }
+            for (List<Integer> conn : conns) {
+                int u = conn.get(0);
+                int v = conn.get(1);
+                graph[u].add(v);
+                graph[v].add(u);
+            }
+            return graph;
+        }
+    }
 	```
 
 ## Related Problems

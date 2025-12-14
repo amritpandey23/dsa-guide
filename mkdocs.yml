@@ -21,6 +21,9 @@ nav:
           - Heap: tree/algorithms/heap.md
           - Union-Find Algorithm: tree/algorithms/union_find.md
           - AVL Tree: tree/algorithms/avl_tree.md
+      - Patterns:
+          - Heap Indexing: tree/patterns/heap_indexing.md
+          - Level Order Traversal from any node: tree/patterns/level_order_traversal_from_any_node.md
   - Graph:
       - Algorithms:
           - Detect Cycle in Directed Graph: graph/algorithms/detect_cycle_in_directed_graph.md

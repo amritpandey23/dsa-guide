@@ -7,8 +7,16 @@ nav:
   - Arrays:
       - Algorithms:
           - Sorting: arrays/algorithms/sorting.md
-      - Patterns:
-          - Sliding Window: arrays/patterns/sliding_window.md
+          - Linear Scan: arrays/algorithms/linear_scan.md
+          - Two Pointers (Opposite Ends): arrays/algorithms/two_pointers_opposite.md
+          - Two Pointers (Same Direction): arrays/algorithms/two_pointers_same.md
+          - Sliding Window (Fixed Size): arrays/algorithms/sliding_window_fixed.md
+          - Sliding Window (Variable Size): arrays/algorithms/sliding_window_variable.md
+          - Binary Search: arrays/algorithms/binary_search.md
+          - First Occurrence: arrays/algorithms/first_occurrence.md
+          - Last Occurrence: arrays/algorithms/last_occurrence.md
+          - Lower Bound: arrays/algorithms/lower_bound.md
+          - Upper Bound: arrays/algorithms/upper_bound.md
   - Matrices:
       - Operations on Matrices: matrix/matrix_operations.md
   - Recursion:

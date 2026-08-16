@@ -1,6 +1,13 @@
 # Bellman Ford Algorithm
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/FtN3BYH2Zes?si=CPGq43pnCJ07JepS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<div class="video-reveal" data-video-id="FtN3BYH2Zes">
+  <button type="button" class="video-reveal__trigger" aria-label="Watch the video tutorial">
+    <span class="video-reveal__title">Watch the video tutorial</span>
+    <span class="video-reveal__play-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+    </span>
+  </button>
+</div>
 
 
 BFA or Bellman Ford algorithm is used to find shortest path from the source node to all the nodes in the graph.
@@ -125,6 +132,45 @@ BFA can help us in identifying a graph having a cycle with negative weight by mo
             }
         }
         return false;
+    }
+    ```
+
+## Printing Shortest Path
+
+We can print the shortest path to any destination by storing the list of nodes related to the destination node from which it was last traversed to.
+
+=== "Java"
+
+    ```java linenums="1"
+    public static void printShortestPath(int source, int n, int[][] edges) {
+        int[] distances = new int[n];
+        int[] lastTraversedFrom = new int[n];
+        Arrays.fill(distances, Integer.MAX_VALUE);
+        Arrays.fill(lastTraversedFrom, -1);
+        distances[source] = 0;
+        for (int v = 0; v < n - 1; ++v) {
+            boolean relaxedInStep = false;
+            for (int[] edge : edges) {
+                int a = edge[0];
+                int b = edge[1];
+                int w = edge[2];
+                if (distances[a] != Integer.MAX_VALUE && distances[b] > distances[a] + w) {
+                    relaxedInStep = true;
+                    distances[b] = distances[a] + w;
+                    lastTraversedFrom[b] = a;
+                }
+            }
+            if (!relaxedInStep) { 
+                break;
+            }
+        }
+        
+        List<Integer> path = new ArrayList<>();
+        for (int curr = n - 1; curr != -1; curr = lastTraversedFrom[curr]) {
+            path.add(curr);
+        }
+        Collections.reverse(path);
+        System.out.println(path);
     }
     ```
 

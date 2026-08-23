@@ -20,9 +20,13 @@ Later, for \(n-1\) times, where \(n\) is the total number of nodes, we iterate o
 
 BFA also helps us in determining a cycle in graph negative weights. If we run the iteration over edges \(n\) times and on the \(n\)th step, if any node still got relaxed, this concludes that the graph has cycle with negative weights.
 
+## Time Complexity
+
+\(O(n \times m)\) where \(n\) is number of nodes and \(m\) is number of edges.
+
 ## Limitations
 
-- BFA does not work on graphs containing negative weights because with negative weight in a cycle we can relax the distances infinitely to any destination node.
+- BFA does not work on graphs containing **negative weight edge cycles** because with negative weight in a cycle we can relax the distances infinitely to any destination node.
 
 ## Input
 

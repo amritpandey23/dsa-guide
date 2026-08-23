@@ -14,7 +14,7 @@
         <link rel="prev" href="../bellman_ford_algorithm/">
       
       
-        <link rel="next" href="../bridges_in_graph/">
+        <link rel="next" href="../floyd_warshall_algorithm/">
       
       
         
@@ -25,7 +25,7 @@
     
     
       
-        <title>Dijkstra Shortest Path - Data Structures and Algorithms Guide</title>
+        <title>Dijkstra - Data Structures and Algorithms Guide</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dijkstras-shortest-path-algorithm" class="md-skip">
+        <a href="#dijkstras-algorithm" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Dijkstra Shortest Path
+              Dijkstra
             
           </span>
         </div>
@@ -1539,7 +1539,7 @@
   <span class="md-ellipsis">
     
   
-    Bellman Ford Shortest Path
+    Bellman Ford
   
 
     
@@ -1576,7 +1576,7 @@
   <span class="md-ellipsis">
     
   
-    Dijkstra Shortest Path
+    Dijkstra
   
 
     
@@ -1594,7 +1594,7 @@
   <span class="md-ellipsis">
     
   
-    Dijkstra Shortest Path
+    Dijkstra
   
 
     
@@ -1620,10 +1620,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#algorithm-overview" class="md-nav__link">
+  <a href="#time-complexity" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Algorithm Overview
+        Time Complexity
       
     </span>
   </a>
@@ -1631,10 +1631,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#key-properties" class="md-nav__link">
+  <a href="#limitation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Key Properties
+        Limitation
       
     </span>
   </a>
@@ -1642,13 +1642,52 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#implementation" class="md-nav__link">
+  <a href="#input" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Implementation
+        Input
       
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algorithm
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#directed-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Directed Graph
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#undirected-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Undirected Graph
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1656,6 +1695,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../floyd_warshall_algorithm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Floyd-Warshall
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -2071,10 +2138,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#algorithm-overview" class="md-nav__link">
+  <a href="#time-complexity" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Algorithm Overview
+        Time Complexity
       
     </span>
   </a>
@@ -2082,10 +2149,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#key-properties" class="md-nav__link">
+  <a href="#limitation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Key Properties
+        Limitation
       
     </span>
   </a>
@@ -2093,13 +2160,52 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#implementation" class="md-nav__link">
+  <a href="#input" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Implementation
+        Input
       
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algorithm
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#directed-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Directed Graph
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#undirected-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Undirected Graph
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2123,27 +2229,29 @@
   
 
 
-<h1 id="dijkstras-shortest-path-algorithm">Dijkstra's Shortest Path Algorithm</h1>
-<p>Dijkstra's algorithm is a <strong>greedy algorithm</strong> that finds the shortest path from a source vertex to all other vertices in a weighted graph with <strong>non-negative edge weights</strong>. It's one of the most fundamental algorithms in graph theory and is widely used in network routing, GPS navigation, and social network analysis.</p>
-<h2 id="algorithm-overview">Algorithm Overview</h2>
+<h1 id="dijkstras-algorithm">Dijkstra's Algorithm</h1>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/XB4MIexjvY0?si=N-D3CVrnEYy5CgWA" title="YouTube video player" frameborder="0" 
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-<p>The algorithm works by:
-1. Starting from the source vertex with distance 0
-2. Using a priority queue to always process the vertex with the minimum distance
-3. Relaxing edges to update distances to neighboring vertices
-4. Marking vertices as processed once their shortest distance is determined</p>
-<h2 id="key-properties">Key Properties</h2>
+<p>Just like <a href="../bellman_ford_algorithm/">Bellman-Ford Algorithm</a>, Dijkstra's Algorithm is used to find shortest path distance from a single node to all the nodes in the graph.</p>
+<p>Dijkstra's algorithm is more efficient than BFA as it uses greedy approach to process edges rather than processing all the nodes. Hence Dijkstra becomes very suitable to run on large graphs.</p>
+<p>The implementation of Dijsktra's algorithm uses min heap or priority queue. The algorithm works by choosing nodes from the queue which are currently least cost to reach. From that chosen node, all the neighbor nodes are relaxed as seen in case of BFA also.</p>
+<p>Initially all the nodes except the source node is assigned a distance of <script type="math/tex">\infty</script> and as the nodes are chosen they are marked processed and their distance is relaxed.</p>
+<h2 id="time-complexity">Time Complexity</h2>
+<p>
+<script type="math/tex">O(n \times mLog(m))</script> where <script type="math/tex">n</script> is number of nodes and <script type="math/tex">m</script> is number of edges.</p>
+<h2 id="limitation">Limitation</h2>
 <ul>
-<li><strong>Greedy Choice</strong>: Always selects the unprocessed vertex with minimum distance</li>
-<li><strong>Optimal Substructure</strong>: The shortest path to any vertex contains shortest paths to intermediate vertices</li>
-<li><strong>Non-negative Weights</strong>: Only works with graphs having non-negative edge weights</li>
-<li><strong>Single Source</strong>: Finds shortest paths from one source to all other vertices</li>
+<li>Cannot provide right results with graphs having <strong>negative weight edges</strong>.</li>
 </ul>
-<h2 id="implementation">Implementation</h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Java</label><label for="__tabbed_1_2">Python</label></div>
+<h2 id="input">Input</h2>
+<ul>
+<li>Adjacency list or creation of Adjacency list from a set of edges</li>
+</ul>
+<h2 id="algorithm">Algorithm</h2>
+<h3 id="directed-graph">Directed Graph</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Java</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -2195,49 +2303,61 @@ referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 <span class="normal">47</span>
 <span class="normal">48</span>
 <span class="normal">49</span>
-<span class="normal">50</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DijkstraAlgorithm</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="nf">dijkstra</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="n">edges</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">source</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="c1">// Build adjacency list</span>
-<span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">[]&gt;[]</span><span class="w"> </span><span class="n">graph</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">[</span><span class="n">n</span><span class="o">]</span><span class="p">;</span>
-<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="n">graph</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
-<span class="w">        </span><span class="p">}</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Dijkstra</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="nf">getShortestPathDistance</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">[]&gt;[]</span><span class="w"> </span><span class="n">graph</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">srcNode</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">graph</span><span class="p">.</span><span class="na">length</span><span class="p">;</span>
 
-<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">edge</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">edges</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">edge</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
-<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="kd">to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">edge</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">;</span>
-<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">weight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">edge</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span><span class="p">;</span>
-<span class="w">            </span><span class="n">graph</span><span class="o">[</span><span class="n">from</span><span class="o">]</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[]</span><span class="p">{</span><span class="kd">to</span><span class="p">,</span><span class="w"> </span><span class="n">weight</span><span class="p">});</span>
-<span class="w">            </span><span class="n">graph</span><span class="o">[</span><span class="kd">to</span><span class="o">]</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[]</span><span class="p">{</span><span class="n">from</span><span class="p">,</span><span class="w"> </span><span class="n">weight</span><span class="p">});</span><span class="w"> </span><span class="c1">// For undirected graph</span>
-<span class="w">        </span><span class="p">}</span>
-
-<span class="w">        </span><span class="c1">// Initialize distances</span>
+<span class="w">        </span><span class="c1">// distances[i] holds the shortestd distance to node i.</span>
+<span class="w">        </span><span class="c1">// Start everything at &quot;infinity&quot; except the source, which is 0 away from itself.</span>
 <span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">distances</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[</span><span class="n">n</span><span class="o">]</span><span class="p">;</span>
 <span class="w">        </span><span class="n">Arrays</span><span class="p">.</span><span class="na">fill</span><span class="p">(</span><span class="n">distances</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">MAX_VALUE</span><span class="p">);</span>
-<span class="w">        </span><span class="n">distances</span><span class="o">[</span><span class="n">source</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="n">distances</span><span class="o">[</span><span class="n">srcNode</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 
-<span class="w">        </span><span class="c1">// Priority queue: [distance, vertex]</span>
-<span class="w">        </span><span class="n">PriorityQueue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">[]&gt;</span><span class="w"> </span><span class="n">pq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PriorityQueue</span><span class="o">&lt;&gt;</span><span class="p">((</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">a</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">b</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">);</span>
-<span class="w">        </span><span class="n">pq</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[]</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">source</span><span class="p">});</span>
+<span class="w">        </span><span class="c1">// Min-heap ordered by cost-to-reach, so we always expand the closest</span>
+<span class="w">        </span><span class="c1">// unprocessed node next</span>
+<span class="w">        </span><span class="n">PriorityQueue</span><span class="o">&lt;</span><span class="n">Pair</span><span class="o">&gt;</span><span class="w"> </span><span class="n">minHeap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PriorityQueue</span><span class="o">&lt;&gt;</span><span class="p">(</span>
+<span class="w">                </span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">compare</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="na">costToReach</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="na">costToReach</span><span class="p">));</span>
+<span class="w">        </span><span class="n">minHeap</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Pair</span><span class="p">(</span><span class="n">srcNode</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">));</span>
 
-<span class="w">        </span><span class="kt">boolean</span><span class="o">[]</span><span class="w"> </span><span class="n">visited</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">boolean</span><span class="o">[</span><span class="n">n</span><span class="o">]</span><span class="p">;</span>
+<span class="w">        </span><span class="c1">// processed[i] = true once we&#39;ve popped node i from the heap for the</span>
+<span class="w">        </span><span class="c1">// first time. Because Dijkstra is greedy, the first time we pop a node,</span>
+<span class="w">        </span><span class="c1">// its cost is guaranteed to be the shortest possible - so it&#39;s &quot;final.&quot;</span>
+<span class="w">        </span><span class="kt">boolean</span><span class="o">[]</span><span class="w"> </span><span class="n">processed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">boolean</span><span class="o">[</span><span class="n">n</span><span class="o">]</span><span class="p">;</span>
 
-<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">pq</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">curr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pq</span><span class="p">.</span><span class="na">poll</span><span class="p">();</span>
-<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">dist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">curr</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
-<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">curr</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">;</span>
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">minHeap</span><span class="p">.</span><span class="na">size</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Pair</span><span class="w"> </span><span class="n">curr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">minHeap</span><span class="p">.</span><span class="na">poll</span><span class="p">();</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">curr</span><span class="p">.</span><span class="na">node</span><span class="p">;</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">costToReach</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">curr</span><span class="p">.</span><span class="na">costToReach</span><span class="p">;</span>
 
-<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">visited</span><span class="o">[</span><span class="n">node</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="k">continue</span><span class="p">;</span>
-<span class="w">            </span><span class="n">visited</span><span class="o">[</span><span class="n">node</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">            </span><span class="c1">// This node may have been pushed multiple times with different costs</span>
+<span class="w">            </span><span class="c1">// (since we don&#39;t do decrease-key on the heap). If we&#39;ve already</span>
+<span class="w">            </span><span class="c1">// finalized it, this is a stale, higher-cost entry - skip it.</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">processed</span><span class="o">[</span><span class="n">node</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">continue</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
 
-<span class="w">            </span><span class="c1">// Relax edges</span>
+<span class="w">            </span><span class="c1">// Finalize this node&#39;s shortest distance.</span>
+<span class="w">            </span><span class="n">processed</span><span class="o">[</span><span class="n">node</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">            </span><span class="n">distances</span><span class="o">[</span><span class="n">node</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">costToReach</span><span class="p">;</span>
+
+<span class="w">            </span><span class="c1">// Try to relax every outgoing edge from this node: see if reaching</span>
+<span class="w">            </span><span class="c1">// the neighbor via this node beats the neighbor&#39;s current best distance.</span>
 <span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">neighbor</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">graph</span><span class="o">[</span><span class="n">node</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="kt">int</span><span class="w"> </span><span class="n">nextNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">neighbor</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
+<span class="w">                </span><span class="kt">int</span><span class="w"> </span><span class="n">neighborNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">neighbor</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
 <span class="w">                </span><span class="kt">int</span><span class="w"> </span><span class="n">edgeWeight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">neighbor</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">;</span>
+<span class="w">                </span><span class="kt">int</span><span class="w"> </span><span class="n">candidateCost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">costToReach</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">edgeWeight</span><span class="p">;</span>
 
-<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">visited</span><span class="o">[</span><span class="n">nextNode</span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">dist</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">edgeWeight</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">distances</span><span class="o">[</span><span class="n">nextNode</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                    </span><span class="n">distances</span><span class="o">[</span><span class="n">nextNode</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dist</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">edgeWeight</span><span class="p">;</span>
-<span class="w">                    </span><span class="n">pq</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[]</span><span class="p">{</span><span class="n">distances</span><span class="o">[</span><span class="n">nextNode</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">nextNode</span><span class="p">});</span>
+<span class="w">                </span><span class="c1">// Only push if this path is actually an improvement. This is</span>
+<span class="w">                </span><span class="c1">// just a pruning optimization - it can&#39;t remove correctness,</span>
+<span class="w">                </span><span class="c1">// it just avoids piling up heap entries we&#39;d throw away anyway.</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">candidateCost</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">distances</span><span class="o">[</span><span class="n">neighborNode</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">minHeap</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Pair</span><span class="p">(</span><span class="n">neighborNode</span><span class="p">,</span><span class="w"> </span><span class="n">candidateCost</span><span class="p">));</span>
 <span class="w">                </span><span class="p">}</span>
 <span class="w">            </span><span class="p">}</span>
 <span class="w">        </span><span class="p">}</span>
@@ -2247,78 +2367,10 @@ referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 </div>
-<div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">heapq</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">defaultdict</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">dijkstra</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">edges</span><span class="p">,</span> <span class="n">source</span><span class="p">):</span>
-    <span class="c1"># Build adjacency list</span>
-    <span class="n">graph</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">from_node</span><span class="p">,</span> <span class="n">to_node</span><span class="p">,</span> <span class="n">weight</span> <span class="ow">in</span> <span class="n">edges</span><span class="p">:</span>
-        <span class="n">graph</span><span class="p">[</span><span class="n">from_node</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">to_node</span><span class="p">,</span> <span class="n">weight</span><span class="p">))</span>
-        <span class="n">graph</span><span class="p">[</span><span class="n">to_node</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">from_node</span><span class="p">,</span> <span class="n">weight</span><span class="p">))</span>  <span class="c1"># For undirected graph</span>
-
-    <span class="c1"># Initialize distances</span>
-    <span class="n">distances</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)]</span> <span class="o">*</span> <span class="n">n</span>
-    <span class="n">distances</span><span class="p">[</span><span class="n">source</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-
-    <span class="c1"># Priority queue: (distance, vertex)</span>
-    <span class="n">pq</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="n">source</span><span class="p">)]</span>
-    <span class="n">visited</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-
-    <span class="k">while</span> <span class="n">pq</span><span class="p">:</span>
-        <span class="n">dist</span><span class="p">,</span> <span class="n">node</span> <span class="o">=</span> <span class="n">heapq</span><span class="o">.</span><span class="n">heappop</span><span class="p">(</span><span class="n">pq</span><span class="p">)</span>
-
-        <span class="k">if</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
-            <span class="k">continue</span>
-        <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
-
-        <span class="c1"># Relax edges</span>
-        <span class="k">for</span> <span class="n">neighbor</span><span class="p">,</span> <span class="n">edge_weight</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="n">node</span><span class="p">]:</span>
-            <span class="k">if</span> <span class="n">neighbor</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
-                <span class="n">new_dist</span> <span class="o">=</span> <span class="n">dist</span> <span class="o">+</span> <span class="n">edge_weight</span>
-                <span class="k">if</span> <span class="n">new_dist</span> <span class="o">&lt;</span> <span class="n">distances</span><span class="p">[</span><span class="n">neighbor</span><span class="p">]:</span>
-                    <span class="n">distances</span><span class="p">[</span><span class="n">neighbor</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_dist</span>
-                    <span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">pq</span><span class="p">,</span> <span class="p">(</span><span class="n">new_dist</span><span class="p">,</span> <span class="n">neighbor</span><span class="p">))</span>
-
-    <span class="k">return</span> <span class="n">distances</span>
-</code></pre></div></td></tr></table></div>
 </div>
 </div>
-</div>
+<h3 id="undirected-graph">Undirected Graph</h3>
+<p>For undirected graph, the adjacency list should also contain back-pairs also. The rest of the algorithm works same.</p>
 
 
 
